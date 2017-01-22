@@ -370,6 +370,7 @@ class wpdb {
 
 		$this->dbh = @mysql_connect($dbhost, $dbuser, $dbpassword, true);
 		if (!$this->dbh) {
+			echo(mysql_error());
 			$this->bail(sprintf(/*WP_I18N_DB_CONN_ERROR*/"
 <h1>Error establishing a database connection</h1>
 <p>This either means that the username and password information in your <code>wp-config.php</code> file is incorrect or we can't contact the database server at <code>%s</code>. This could mean your host's database server is down.</p>
